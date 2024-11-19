@@ -1,6 +1,6 @@
 {
   "functions": {
-    "src/app/api/**/route.{js,ts}": {
+    "src/app/api/get-shutter-count/route.ts": {
       "runtime": "nodejs20.x",
       "includeFiles": "node_modules/exiftool-vendored.pl/bin/**",
       "memory": 1024,
