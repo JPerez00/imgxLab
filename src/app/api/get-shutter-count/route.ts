@@ -40,13 +40,21 @@ export async function POST(request: Request) {
       Model: cameraModel,
       shutterCount,
     });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error processing shutter count:', error);
+
+    // Handle the error without using 'any'
+    let errorMessage = 'An unknown error occurred.';
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    } else if (typeof error === 'string') {
+      errorMessage = error;
+    }
 
     return NextResponse.json(
       {
         error: 'Failed to process shutter count',
-        details: error.message || error.toString(),
+        details: errorMessage,
       },
       { status: 500 }
     );
