@@ -25,12 +25,12 @@ export async function POST(request: Request) {
 
     // Try to extract the shutter count from various possible tags
     const shutterCount =
-      tags.ShutterCount ||
-      tags.ImageCount ||
-      tags['Sony:ShutterCount'] ||
-      tags['MakerNotes:ShutterCount'] ||
-      tags['MakerNotes:ImageCount'] ||
-      'Unavailable';
+    tags.ShutterCount ||
+    tags.ImageCount ||
+    tags['Sony:ShutterCount'] ||
+    tags['MakerNotes:ShutterCount'] ||
+    tags['MakerNotes:ImageCount'] ||
+    'Unavailable';  
 
     const cameraMake = tags.Make || 'Unknown';
     const cameraModel = tags.Model || 'Unknown';

@@ -65,7 +65,7 @@ export default function ShutterTool() {
         reader.readAsDataURL(file);
       });
   
-      const response = await fetch('/api/get-shutter-count', {
+      const response = await fetch('api/get-shutter-count', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
