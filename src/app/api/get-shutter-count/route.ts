@@ -27,10 +27,10 @@ export async function POST(request: Request) {
     const shutterCount =
     tags.ShutterCount ||
     tags.ImageCount ||
-    (tags as any)['Sony:ShutterCount'] ||
-    (tags as any)['MakerNotes:ShutterCount'] ||
-    (tags as any)['MakerNotes:ImageCount'] ||
-    'Unavailable';
+    tags['Sony:ShutterCount'] ||
+    tags['MakerNotes:ShutterCount'] ||
+    tags['MakerNotes:ImageCount'] ||
+    'Unavailable';  
 
     const cameraMake = tags.Make || 'Unknown';
     const cameraModel = tags.Model || 'Unknown';
