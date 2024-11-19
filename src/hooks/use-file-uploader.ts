@@ -1,6 +1,5 @@
 // hooks/use-file-uploader.ts
 
-import { useCallback } from "react";
 import { type ChangeEvent, useState } from "react";
 
 const parseSvgFile = (content: string, fileName: string) => {

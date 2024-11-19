@@ -85,7 +85,7 @@ export default function Home() {
               Vercel
             </Pin>{' '}
             -{' '}
-            <Pin href="https://kit.com/">
+            <Pin href="https://github.com/JPerez00/imgxLab">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"

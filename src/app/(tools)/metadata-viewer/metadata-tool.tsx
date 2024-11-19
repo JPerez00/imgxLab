@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import exifr from 'exifr';
+import Image from 'next/image';
 import { UploadBox } from '@/components/shared/upload-box';
 import { FileDropzone } from '@/components/shared/file-dropzone';
 import { Table, TableHead, TableBody, TableRow, TableCell } from '@/components/table';
@@ -27,19 +28,21 @@ type ExifData = {
   GPSLongitude?: number;
   ColorSpace?: number | null;
   Copyright?: string;
-  [key: string]: any;
+  [key: string]: unknown; // Use unknown instead of any
 };
 
 export default function MetadataTool() {
   const [exifData, setExifData] = useState<ExifData | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [fileDimensions, setFileDimensions] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false); // Added loading state
+  const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number } | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (selectedFile) {
-      const img = new Image();
+      const img = new window.Image();
       img.onload = () => {
+        setImageDimensions({ width: img.width, height: img.height });
         setFileDimensions(`${img.width} × ${img.height}`);
       };
       img.src = URL.createObjectURL(selectedFile);
@@ -48,7 +51,7 @@ export default function MetadataTool() {
 
   const handleFileChange = async (file: File) => {
     setSelectedFile(file);
-    setIsLoading(true); // Start loading
+    setIsLoading(true);
 
     try {
       const exif = await exifr.parse(file, {
@@ -56,8 +59,6 @@ export default function MetadataTool() {
         exif: true,
         gps: true,
       });
-
-      // console.log(exif);
 
       if (exif) {
         const extractedData: ExifData = {
@@ -69,10 +70,9 @@ export default function MetadataTool() {
       }
     } catch (error) {
       console.error('Error reading EXIF data:', error);
-      // Display an error message to the user
       alert('Failed to read EXIF data from the image.');
     } finally {
-      setIsLoading(false); // End loading
+      setIsLoading(false);
     }
   };
 
@@ -84,6 +84,7 @@ export default function MetadataTool() {
     setExifData(null);
     setSelectedFile(null);
     setFileDimensions(null);
+    setImageDimensions(null);
   };
 
   const formatExposureTime = (exposureTime: number) => {
@@ -127,7 +128,7 @@ export default function MetadataTool() {
 
   return (
     <div className="mt-6 mb-12 w-full max-w-2xl mx-auto">
-      <h1 className="mb-4 text-3xl md:text-4xl font-extrabold text-center tracking-tight bg-gradient-to-br from-white from-25% to-orange-600 bg-clip-text text-transparent">
+      <h1 className="mb-2 text-3xl md:text-4xl font-bold leading-tight md:leading-[2.8rem] text-center tracking-tight bg-gradient-to-br from-white from-25% to-orange-600 bg-clip-text text-transparent">
         Image Metadata Analyzer
       </h1>
       {!selectedFile ? (
@@ -147,18 +148,23 @@ export default function MetadataTool() {
           />
         </FileDropzone>
       ) : (
-        <div className="mt-6 mb-6">
-          <img
-            src={URL.createObjectURL(selectedFile)}
-            alt="Uploaded photograph"
-            className="rounded-2xl object-contain mx-auto max-w-full sm:max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl ring-1 ring-white/10 shadow"
-          />
-          <div className="mt-6 md:mt-6 text-center text-sm md:text-base text-zinc-400">
-            <p className="font-medium">File Name: {selectedFile.name}</p>
-            <p className="font-medium">File Size: {(selectedFile.size / 1024).toFixed(2)} KB</p>
-            <p className="font-medium">File Dimensions: {fileDimensions || 'Loading...'}</p>
+        selectedFile &&
+        imageDimensions && (
+          <div className="mt-6 mb-6">
+            <Image
+              src={URL.createObjectURL(selectedFile)}
+              alt="Uploaded photograph"
+              width={imageDimensions.width}
+              height={imageDimensions.height}
+              className="rounded-2xl object-contain mx-auto max-w-full sm:max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl ring-1 ring-white/10 shadow"
+            />
+            <div className="mt-6 md:mt-6 text-center text-sm md:text-base text-zinc-400">
+              <p className="font-medium">File Name: {selectedFile.name}</p>
+              <p className="font-medium">File Size: {(selectedFile.size / 1024).toFixed(2)} KB</p>
+              <p className="font-medium">File Dimensions: {fileDimensions || 'Loading...'}</p>
+            </div>
           </div>
-        </div>
+        )
       )}
 
       {isLoading && (

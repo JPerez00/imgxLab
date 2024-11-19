@@ -185,7 +185,7 @@ export const Button = forwardRef(function Button(
     variantStyles = clsx(styles.solid, styles.colors[color]);
   }
 
-  let classes = clsx(
+  const classes = clsx(
     className,
     styles.base,
     variantStyles,
