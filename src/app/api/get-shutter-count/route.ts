@@ -7,7 +7,7 @@ export const runtime = 'nodejs';
 
 export async function POST(request: Request) {
   let tempFilePath: string | null = null;
-  const exifTool = new ExifTool(); // Create a new instance per request
+  const exifTool = new ExifTool();
 
   try {
     const { fileData } = await request.json();
@@ -25,12 +25,12 @@ export async function POST(request: Request) {
 
     // Try to extract the shutter count from various possible tags
     const shutterCount =
-    tags.ShutterCount ||
-    tags.ImageCount ||
-    tags['Sony:ShutterCount'] ||
-    tags['MakerNotes:ShutterCount'] ||
-    tags['MakerNotes:ImageCount'] ||
-    'Unavailable';  
+      tags.ShutterCount ||
+      tags.ImageCount ||
+      tags['Sony:ShutterCount'] ||
+      tags['MakerNotes:ShutterCount'] ||
+      tags['MakerNotes:ImageCount'] ||
+      'Unavailable';
 
     const cameraMake = tags.Make || 'Unknown';
     const cameraModel = tags.Model || 'Unknown';
@@ -40,10 +40,14 @@ export async function POST(request: Request) {
       Model: cameraModel,
       shutterCount,
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error processing shutter count:', error);
+
     return NextResponse.json(
-      { error: 'Failed to process shutter count' },
+      {
+        error: 'Failed to process shutter count',
+        details: error.message || error.toString(),
+      },
       { status: 500 }
     );
   } finally {
@@ -55,6 +59,6 @@ export async function POST(request: Request) {
         console.error('Error deleting temp file:', e);
       }
     }
-    await exifTool.end(); // End the instance after processing
+    await exifTool.end();
   }
 }

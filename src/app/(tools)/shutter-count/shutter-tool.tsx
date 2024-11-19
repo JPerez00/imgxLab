@@ -74,8 +74,9 @@ export default function ShutterTool() {
       });
   
       if (!response.ok) {
-        throw new Error('Failed to fetch shutter count.');
-      }
+        const errorData = await response.json();
+        throw new Error(errorData.details || 'Failed to fetch shutter count.');
+      }      
   
       const data = await response.json();
   
