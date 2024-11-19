@@ -1,31 +1,39 @@
 import { NextResponse } from 'next/server';
 import { ExifTool } from 'exiftool-vendored';
 import * as fs from 'fs/promises';
+import * as path from 'path';
 
-const exifTool = new ExifTool();
+export const runtime = 'nodejs';
 
 export async function POST(request: Request) {
-  try {
-    const { fileData, fileName } = await request.json();
+  let tempFilePath: string | null = null;
+  const exifTool = new ExifTool(); // Create a new instance per request
 
-    // Decode the Base64 file data
+  try {
+    const { fileData } = await request.json();
+
+    // Decode the Base64 file data into a Buffer
     const buffer = Buffer.from(fileData, 'base64');
 
-    // Write the file temporarily
-    const tempFilePath = `/tmp/${fileName}`;
+    // Write buffer to a temporary file
+    const tempFileName = `upload-${Date.now()}.jpg`;
+    tempFilePath = path.join('/tmp', tempFileName);
     await fs.writeFile(tempFilePath, buffer);
 
-    // Extract EXIF data
-    const tags = await exifTool.read(tempFilePath);
+    // Extract EXIF data from the temporary file
+    const tags = await exifTool.read(tempFilePath, ['-all']);
 
-    // Extract necessary fields
+    // Try to extract the shutter count from various possible tags
+    const shutterCount =
+    tags.ShutterCount ||
+    tags.ImageCount ||
+    (tags as any)['Sony:ShutterCount'] ||
+    (tags as any)['MakerNotes:ShutterCount'] ||
+    (tags as any)['MakerNotes:ImageCount'] ||
+    'Unavailable';
+
     const cameraMake = tags.Make || 'Unknown';
     const cameraModel = tags.Model || 'Unknown';
-    const shutterCount =
-      tags.ImageCount || tags.ShutterCount || 'Unavailable';
-
-    // Clean up temporary file
-    await fs.unlink(tempFilePath);
 
     return NextResponse.json({
       Make: cameraMake,
@@ -38,5 +46,15 @@ export async function POST(request: Request) {
       { error: 'Failed to process shutter count' },
       { status: 500 }
     );
+  } finally {
+    // Clean up temporary file if it exists
+    if (tempFilePath) {
+      try {
+        await fs.unlink(tempFilePath);
+      } catch (e) {
+        console.error('Error deleting temp file:', e);
+      }
+    }
+    await exifTool.end(); // End the instance after processing
   }
 }

@@ -45,43 +45,43 @@ export default function ShutterTool() {
   const handleFileChange = async (file: File) => {
     setSelectedFile(file);
     setIsLoading(true);
-
+  
     try {
+      // Parse EXIF data on the client side (optional)
       const exif = await exifr.parse(file);
-
+  
       const make = exif?.Make || 'Unknown';
       const model = exif?.Model || 'Unknown';
-
+  
       setExifData({
         Make: make,
         Model: model,
       });
-
+  
       const base64File = await new Promise<string>((resolve, reject) => {
         const reader = new FileReader();
-        reader.onload = () => resolve(reader.result as string);
+        reader.onload = () => resolve((reader.result as string).split(',')[1]); // Exclude data URL prefix
         reader.onerror = reject;
         reader.readAsDataURL(file);
       });
-
+  
       const response = await fetch('/api/get-shutter-count', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          fileName: file.name,
-          fileData: base64File.split(',')[1],
+          fileData: base64File,
         }),
       });
-
+  
       if (!response.ok) {
         throw new Error('Failed to fetch shutter count.');
       }
-
+  
       const data = await response.json();
-
+  
       setShutterData({
-        Make: make,
-        Model: model,
+        Make: data.Make || make,
+        Model: data.Model || model,
         ShutterCount: data.shutterCount || 'Unavailable',
       });
     } catch (error) {
@@ -95,7 +95,7 @@ export default function ShutterTool() {
     } finally {
       setIsLoading(false);
     }
-  };
+  };  
 
   const handleUpload = (file: File) => {
     handleFileChange(file);

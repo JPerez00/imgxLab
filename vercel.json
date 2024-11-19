@@ -1,0 +1,9 @@
+{
+  "functions": {
+    "api/get-shutter-count/route.ts": {
+      "includeFiles": "node_modules/exiftool-vendored.pl/bin/**",
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  }
+}
