@@ -13,7 +13,7 @@ export default function Header() {
           <span className="ml-1 text-2xl font-bold tracking-tighter bg-gradient-to-br from-white from-10% to-orange-500 bg-clip-text text-transparent">imgxLab</span>
         </Link>
         <div className="flex items-center space-x-4">
-        <Button href="#">
+        <Button href="https://github.com/JPerez00/imgxLab">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -25,7 +25,7 @@ export default function Header() {
           </svg>
             Repo
         </Button>
-        <Button href="#">
+        <Button href="https://www.jorge-perez.dev/blog">
             Docs
         </Button>
         </div>
