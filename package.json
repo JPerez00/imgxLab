@@ -2,13 +2,13 @@
   "name": "imgxlab",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "postinstall": "chmod +x ./node_modules/exiftool-vendored.pl/bin/exiftool"
-  },
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "postinstall": "chmod +x ./node_modules/exiftool-vendored.pl/bin/exiftool"
+},
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "clsx": "^2.1.1",

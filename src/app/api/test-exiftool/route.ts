@@ -7,6 +7,35 @@ import { ExifTool } from 'exiftool-vendored';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 
+// GET handler for testing
+export async function GET(request: Request) {
+  try {
+    const exifTool = new ExifTool();
+    const version = await exifTool.version();
+    await exifTool.end();
+
+    return NextResponse.json({ version });
+  } catch (error) {
+    console.error('Error executing exiftool:', error);
+
+    let errorMessage = 'An unknown error occurred.';
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    } else if (typeof error === 'string') {
+      errorMessage = error;
+    }
+
+    return NextResponse.json(
+      {
+        error: 'Failed to execute exiftool',
+        details: errorMessage,
+      },
+      { status: 500 }
+    );
+  }
+}
+
+// POST handler for shutter count
 export async function POST(request: Request) {
   let tempFilePath: string | null = null;
   const exifTool = new ExifTool();
@@ -32,7 +61,7 @@ export async function POST(request: Request) {
       tags['Sony:ShutterCount'] ||
       tags['MakerNotes:ShutterCount'] ||
       tags['MakerNotes:ImageCount'] ||
-      'Unavailable';
+      'Unavailable';  
 
     const cameraMake = tags.Make || 'Unknown';
     const cameraModel = tags.Model || 'Unknown';
