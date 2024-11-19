@@ -2,8 +2,6 @@
   "functions": {
     "src/app/api/get-shutter-count/route.ts": {
       "includeFiles": "node_modules/exiftool-vendored.pl/bin/**"
-    },
-    "src/app/api/test-exiftool/route.ts": {
     }
   }
 }
