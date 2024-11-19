@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Divider } from "@/components/divider";
-import { ApertureIcon, ScanIcon, TextSearchIcon, RefreshCwIcon } from "lucide-react"
+import { TextSearchIcon } from "lucide-react"
 
 
 function Pin(props: JSX.IntrinsicAttributes & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
