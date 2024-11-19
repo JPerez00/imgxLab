@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Divider } from "@/components/divider";
-import { TextSearchIcon } from "lucide-react"
-
+import { TextSearchIcon, ClockIcon } from "lucide-react"
 
 function Pin(props: JSX.IntrinsicAttributes & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   return (
@@ -16,7 +15,9 @@ function Pin(props: JSX.IntrinsicAttributes & React.AnchorHTMLAttributes<HTMLAnc
 export default function Home() {
 
   const apps = [
-    { name: "Metadata Analyzer", description: "Quickly uncover detailed metadata from your images, including camera settings, lens information, copyright data, and more.", icon: <TextSearchIcon className="h-6 w-6" />, link: "/metadata-viewer" },
+    { name: "Metadata Analyzer", description: "Quickly uncover detailed metadata from your unedited images, including camera settings, lens information, copyright data, and more.", icon: <TextSearchIcon className="h-6 w-6" />, link: "/metadata-viewer" },
+    { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-6 w-6" />, link: "#" },
+    { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-6 w-6" />, link: "#" },
     // { name: "Shutter Count Checker", description: "Discover your camera's shutter count instantly and keep track of its usage.", icon: <ApertureIcon className="h-6 w-6" />, link: "/shutter-count" },
     // { name: "Frame Insets Designer", description: "Enhance your photos with customizable frame insets. Adjust width, aspect ratios, and background colors to match your style.", icon: <ScanIcon className="h-6 w-6" />, link: "/frame-inset" },
     // { name: "WebP to PNG Converter", description: "Effortlessly convert images between WebP and PNG formats, both ways, with ease.", icon: <RefreshCwIcon className="h-6 w-6" />, link: "/webp-to-png" },
@@ -24,7 +25,7 @@ export default function Home() {
   
   return (
     <div className="p-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto mt-16 mb-32">
         <div className="mt-16 text-center text-balance">
           <h1 className="text-balance md:text-7xl text-6xl leading-tight md:leading-[5.2rem] font-bold tracking-tight bg-gradient-to-br from-white from-30% to-orange-500 to-75% bg-clip-text text-transparent mb-2">
             {`imgxLab`}
@@ -59,7 +60,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <footer className="mt-20">
+      <footer className="mt-8">
         <div className="max-w-5xl mx-auto flex flex-col items-center border-t border-zinc-400/20 py-6 sm:flex-row-reverse sm:justify-between">
           <p className="text-sm text-zinc-500 sm:mt-0">
             Developed by{' '}

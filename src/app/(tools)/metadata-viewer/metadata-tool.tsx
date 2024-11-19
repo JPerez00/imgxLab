@@ -119,7 +119,7 @@ export default function MetadataTool() {
     { label: 'ISO', value: exifData?.ISO || null },
     { label: 'Exposure Compensation', value: exifData?.ExposureCompensation || exifData?.ExposureBiasValue || null },
     { label: 'Fujifilm Simulation', value: exifData?.FilmMode || exifData?.Simulation || null },
-    { label: 'Flash?', value: exifData?.Flash || null },
+    { label: 'Flash', value: exifData?.Flash || null },
     { label: 'Date', value: exifData?.DateTimeOriginal ? new Date(exifData.DateTimeOriginal).toLocaleString() : null },
     { label: 'Location', value: exifData?.GPSLatitude && exifData?.GPSLongitude ? `Latitude: ${exifData.GPSLatitude}, Longitude: ${exifData.GPSLongitude}` : null },
     { label: 'Copyright', value: exifData?.Copyright || null },
@@ -127,7 +127,7 @@ export default function MetadataTool() {
   ].filter((item) => item.value);
 
   return (
-    <div className="mt-6 mb-12 w-full max-w-2xl mx-auto">
+    <div className="mt-12 md:mt-16 mb-20 w-full max-w-2xl mx-auto">
       <h1 className="mb-2 text-3xl md:text-4xl font-bold leading-tight md:leading-[2.8rem] text-center tracking-tight bg-gradient-to-br from-white from-25% to-orange-600 bg-clip-text text-transparent">
         Image Metadata Analyzer
       </h1>
@@ -158,7 +158,7 @@ export default function MetadataTool() {
               height={imageDimensions.height}
               className="rounded-2xl object-contain mx-auto max-w-full sm:max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl ring-1 ring-white/10 shadow"
             />
-            <div className="mt-6 md:mt-6 text-center text-sm md:text-base text-zinc-400">
+            <div className="mt-8 md:mt-6 text-center text-sm md:text-base text-zinc-400">
               <p className="font-medium">File Name: {selectedFile.name}</p>
               <p className="font-medium">File Size: {(selectedFile.size / 1024).toFixed(2)} KB</p>
               <p className="font-medium">File Dimensions: {fileDimensions || 'Loading...'}</p>
