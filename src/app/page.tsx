@@ -18,6 +18,9 @@ export default function Home() {
     { name: "Metadata Analyzer", description: "Quickly uncover detailed metadata from your unedited images, including camera settings, lens information, copyright data, and more.", icon: <TextSearchIcon className="h-6 w-6" />, link: "/metadata-viewer" },
     { name: "Frame Insets Designer", description: "Enhance your photos with customizable frame insets. Adjust width, aspect ratios, and background colors to match your style.", icon: <ScanIcon className="h-6 w-6" />, link: "/frame-inset" },
     { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-6 w-6" />, link: "#" },
+    { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-6 w-6" />, link: "#" },
+    { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-6 w-6" />, link: "#" },
+    { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-6 w-6" />, link: "#" },
     // { name: "Shutter Count Checker", description: "Discover your camera's shutter count instantly and keep track of its usage. Use an unedited JPEG photo.", icon: <ApertureIcon className="h-6 w-6" />, link: "/shutter-count" },
     // { name: "Frame Insets Designer", description: "Enhance your photos with customizable frame insets. Adjust width, aspect ratios, and background colors to match your style.", icon: <ScanIcon className="h-6 w-6" />, link: "/frame-inset" },
     // { name: "WebP to PNG Converter", description: "Effortlessly convert images between WebP and PNG formats, both ways, with ease.", icon: <RefreshCwIcon className="h-6 w-6" />, link: "/webp-to-png" },
@@ -27,22 +30,22 @@ export default function Home() {
     <div className="p-4">
       <div className="max-w-5xl mx-auto mt-16 md:mt-24 mb-32">
         <div className="mt-16 text-center text-balance">
-          <h1 className="text-balance md:text-7xl text-6xl leading-tight md:leading-[5.2rem] font-bold tracking-tight bg-gradient-to-br from-white from-30% to-orange-500 to-75% bg-clip-text text-transparent mb-2">
-            {`imgxLab`}
+          <div className="mb-2 md:mb-1 font-semibold inline-flex rounded-2xl px-4 py-1.5 text-sm md:text-base text-white ring-1 ring-orange-300/30 hover:ring-orange-300/50 backdrop-blur-xl bg-orange-300/10 transition-all">
+            {`Welcome To imgxLab`}
+          </div>
+          <h1 className="mb-4 md:mb-6 max-w-4xl mx-auto w-full md:text-7xl text-4xl leading-[2.8rem] md:leading-[5.2rem] font-bold tracking-tight bg-gradient-to-br from-white from-30% to-orange-500 to-80% bg-clip-text text-transparent">
+            An open-source lab for photographers, built by photographers.
           </h1>
-          <p className="max-w-3xl mx-auto font-semibold text-base md:text-xl text-white/95 mb-3">
-            An <span className="underline-custom">open-source</span> lab for photographers, built by photographers.
-          </p>
-          <p className="max-w-3xl mx-auto text-base md:text-lg text-zinc-400">
+          <p className="leading-6 max-w-4xl mx-auto w-full text-base md:text-lg text-zinc-300">
             {`Simple, intuitive, and packed with 
             essential tools like metadata analysis, shutter count checks, and format 
             converters. All the essential tools that every photographer needs (at some point).`}
           </p>
-          </div>
-        <div className="py-8">
+        </div>
+        <div className="py-10">
           <Divider />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 space-y-2">
           {apps.map((app, index) => (
             <Link key={index} href={app.link} className="transform transition-all duration-300 hover:bg-zinc-800/70 rounded-xl bg-zinc-900 shadow-[0px_0px_0px_1px_rgba(255,255,255,0.15)] hover:shadow-[0px_0px_0px_1px_rgba(255,255,255,0.20)] before:pointer-events-none before:absolute before:-inset-px before:rounded-xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset]">
               <div className="h-full p-6 rounded-xl">
