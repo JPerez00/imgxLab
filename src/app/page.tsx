@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Divider } from "@/components/divider";
-import { TextSearchIcon, ClockIcon, ScaleIcon, ApertureIcon } from "lucide-react"
+import { TextSearchIcon, ClockIcon, ScaleIcon } from "lucide-react"
 
 function Pin(props: JSX.IntrinsicAttributes & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   return (
@@ -16,8 +16,9 @@ export default function Home() {
 
   const apps = [
     { name: "Metadata Analyzer", description: "Quickly uncover detailed metadata from your unedited images, including camera settings, lens information, copyright data, and more.", icon: <TextSearchIcon className="h-6 w-6" />, link: "/metadata-viewer" },
-    { name: "Shutter Count Checker", description: "Discover your camera's shutter count instantly and keep track of its usage. Use an unedited JPEG photo.", icon: <ApertureIcon className="h-6 w-6" />, link: "/shutter-count" },
     { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-6 w-6" />, link: "#" },
+    { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-6 w-6" />, link: "#" },
+    // { name: "Shutter Count Checker", description: "Discover your camera's shutter count instantly and keep track of its usage. Use an unedited JPEG photo.", icon: <ApertureIcon className="h-6 w-6" />, link: "/shutter-count" },
     // { name: "Frame Insets Designer", description: "Enhance your photos with customizable frame insets. Adjust width, aspect ratios, and background colors to match your style.", icon: <ScanIcon className="h-6 w-6" />, link: "/frame-inset" },
     // { name: "WebP to PNG Converter", description: "Effortlessly convert images between WebP and PNG formats, both ways, with ease.", icon: <RefreshCwIcon className="h-6 w-6" />, link: "/webp-to-png" },
   ];
