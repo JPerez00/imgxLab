@@ -33,7 +33,7 @@ export default function Home() {
           <div className="mb-2 md:mb-1 font-semibold inline-flex rounded-2xl px-4 py-1.5 text-sm md:text-base text-white ring-1 ring-orange-300/30 hover:ring-orange-300/50 backdrop-blur-xl bg-orange-300/10 transition-all">
             {`Welcome To imgxLab`}
           </div>
-          <h1 className="mb-4 md:mb-6 max-w-4xl mx-auto w-full md:text-7xl text-4xl leading-[2.8rem] md:leading-[5.2rem] font-bold tracking-tight bg-gradient-to-br from-white from-30% to-orange-500 to-80% bg-clip-text text-transparent">
+          <h1 className="mb-4 md:mb-6 max-w-4xl mx-auto w-full md:text-7xl text-4xl leading-[2.8rem] md:leading-[5.2rem] font-bold tracking-tight bg-gradient-to-br from-zinc-100 from-30% to-orange-500 to-80% bg-clip-text text-transparent">
             An open-source lab for photographers, built by photographers.
           </h1>
           <p className="leading-6 max-w-4xl mx-auto w-full text-base md:text-lg text-zinc-300">
@@ -45,7 +45,7 @@ export default function Home() {
         <div className="py-10">
           <Divider />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 space-y-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {apps.map((app, index) => (
             <Link key={index} href={app.link} className="transform transition-all duration-300 hover:bg-zinc-800/70 rounded-xl bg-zinc-900 shadow-[0px_0px_0px_1px_rgba(255,255,255,0.15)] hover:shadow-[0px_0px_0px_1px_rgba(255,255,255,0.20)] before:pointer-events-none before:absolute before:-inset-px before:rounded-xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset]">
               <div className="h-full p-6 rounded-xl">
