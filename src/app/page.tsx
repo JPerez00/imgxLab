@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Divider } from "@/components/divider";
-import { TextSearchIcon, ClockIcon, ScaleIcon, ScanIcon } from "lucide-react"
+import { TextSearchIcon, ClockIcon, ScaleIcon, ScanIcon, PackageIcon } from "lucide-react"
 
 function Pin(props: JSX.IntrinsicAttributes & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   return (
@@ -15,12 +15,12 @@ function Pin(props: JSX.IntrinsicAttributes & React.AnchorHTMLAttributes<HTMLAnc
 export default function Home() {
 
   const apps = [
-    { name: "Metadata Analyzer", description: "Quickly uncover detailed metadata from your unedited images, including camera settings, lens information, copyright data, and more.", icon: <TextSearchIcon className="h-6 w-6" />, link: "/metadata-viewer" },
-    { name: "Frame Insets Designer", description: "Enhance your photos with customizable frame insets. Adjust width, aspect ratios, and background colors to match your style.", icon: <ScanIcon className="h-6 w-6" />, link: "/frame-inset" },
-    { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-6 w-6" />, link: "#" },
-    { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-6 w-6" />, link: "#" },
-    { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-6 w-6" />, link: "#" },
-    { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-6 w-6" />, link: "#" },
+    { name: "Metadata Analyzer", description: "Quickly uncover detailed metadata from your unedited images, including camera settings, lens information, copyright data, and more.", icon: <TextSearchIcon className="h-8 w-8" />, link: "/metadata-viewer" },
+    { name: "Frame Insets Designer", description: "Enhance your photos with customizable frame insets. Adjust width, aspect ratios, and background colors to match your style.", icon: <ScanIcon className="h-8 w-8" />, link: "/frame-inset" },
+    { name: "Image Compressor", description: "Reduce image file sizes without compromising image quality. Supports JPEG, PNG, WebP, and more!", icon: <PackageIcon className="h-8 w-8" />, link: "/img-compressor" },
+    { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-8 w-8" />, link: "#" },
+    { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-8 w-8" />, link: "#" },
+    { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-8 w-8" />, link: "#" },
     // { name: "Shutter Count Checker", description: "Discover your camera's shutter count instantly and keep track of its usage. Use an unedited JPEG photo.", icon: <ApertureIcon className="h-6 w-6" />, link: "/shutter-count" },
     // { name: "Frame Insets Designer", description: "Enhance your photos with customizable frame insets. Adjust width, aspect ratios, and background colors to match your style.", icon: <ScanIcon className="h-6 w-6" />, link: "/frame-inset" },
     // { name: "WebP to PNG Converter", description: "Effortlessly convert images between WebP and PNG formats, both ways, with ease.", icon: <RefreshCwIcon className="h-6 w-6" />, link: "/webp-to-png" },
@@ -28,9 +28,9 @@ export default function Home() {
   
   return (
     <div className="p-4">
-      <div className="max-w-5xl mx-auto mt-16 md:mt-24 mb-32">
+      <div className="max-w-6xl mx-auto mt-16 md:mt-24 mb-32">
         <div className="mt-16 text-center text-balance">
-          <div className="mb-2 md:mb-1 font-semibold inline-flex rounded-2xl px-4 py-1.5 text-sm md:text-base text-white ring-1 ring-orange-300/30 hover:ring-orange-300/50 backdrop-blur-xl bg-orange-300/10 transition-all">
+          <div className="mb-2 md:mb-1 font-bold inline-flex rounded-2xl px-4 py-1.5 text-sm md:text-base text-white ring-1 ring-orange-300/60 hover:ring-orange-300 backdrop-blur-xl bg-orange-500/10 transition-all">
             {`Welcome To imgxLab`}
           </div>
           <h1 className="mb-4 md:mb-6 max-w-4xl mx-auto w-full md:text-7xl text-4xl leading-[2.8rem] md:leading-[5.2rem] font-bold tracking-tight bg-gradient-to-br from-zinc-100 from-30% to-orange-500 to-80% bg-clip-text text-transparent">
@@ -54,9 +54,9 @@ export default function Home() {
                     {app.icon}
                   </div>
                 </div>
-                <div className="mt-2 text-xl font-semibold tracking-tight text-white">{app.name}</div>
+                <div className="mt-2 text-2xl font-semibold tracking-tight text-white">{app.name}</div>
                 <div>
-                  <div className="mt-1 text-zinc-300">{app.description}</div>
+                  <div className="mt-2 text-zinc-300">{app.description}</div>
                 </div>
               </div>
             </Link>
@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </div>
       <footer className="mt-8">
-        <div className="max-w-5xl mx-auto flex flex-col items-center border-t border-zinc-400/20 py-6 sm:flex-row-reverse sm:justify-between">
+        <div className="max-w-6xl mx-auto flex flex-col items-center border-t border-zinc-400/20 py-6 sm:flex-row-reverse sm:justify-between">
           <p className="text-sm text-zinc-500 sm:mt-0">
             Developed by{' '}
             <Link

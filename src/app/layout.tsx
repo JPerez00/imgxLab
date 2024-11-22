@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import { Analytics } from "@vercel/analytics/react"
 import NextTopLoader from "nextjs-toploader";
+import { Toaster } from 'sonner';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -44,6 +45,8 @@ export default function RootLayout({
         <Header />
         {children}
         <Analytics />
+        <Toaster 
+        position='bottom-center' duration={8000} richColors expand closeButton />
       </body>
     </html>
   );

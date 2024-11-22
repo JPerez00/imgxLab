@@ -7,10 +7,10 @@ import { Button } from './button';
 export default function Header() {
   return (
     <header className="border-b border-zinc-400/20 bg-black shadow">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center display">
           <CameraIcon className="h-6 w-6 text-white" />
-          <span className="ml-1 text-2xl font-bold tracking-tighter bg-gradient-to-br from-white from-10% to-orange-500 bg-clip-text text-transparent">imgxLab</span>
+          <span className="ml-2 text-xl font-bold tracking-tight bg-gradient-to-br from-white from-10% to-orange-500 bg-clip-text text-transparent">imgxLab</span>
         </Link>
         <div className="flex items-center space-x-4">
         <Button href="https://github.com/JPerez00/imgxLab">
