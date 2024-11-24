@@ -6,16 +6,56 @@ An open-source lab for photographers, built by photographers.
 
 Simple, intuitive, and packed with essential tools like metadata analysis, shutter count checks, and format converters. All the essential tools that every photographer needs (at some point).
 
-## Work in Progress.
+## Live Project
 
-The idea is to have a long term project that solves simple and common issues that photographers have.
+[https://www.imgxlab.com/](https://www.imgxlab.com/)
+
+## Features
+
+- Utilizes local storage.
+- Simple and intuitive interface.
+- Drag & drop files, or select them manually.
+- Works entirely offline, with no internet connection required.
+
+## Current Tools
+
+- Metadata Analyzer Tool: Quickly uncover detailed metadata from your unedited images, including camera settings, lens information, copyright data, and more.
+
+- Frame Insets Designer Tool: Enhance your photos with customizable frame insets. Adjust width, aspect ratios, and background colors to match your style.
+
+- Image Compressor: Efficiently compress images without compromising quality, saving storage space while maintaining visual fidelity.
+
+- WebP to PNG Converter: Easily convert images between WebP and PNG formats, allowing for broader compatibility and usage.
+
+## The Magic Behind imgxLab
+
+All processing is done locally using your browser's local storage, ensuring that your files are never shared or uploaded to any external servers. This means you can use imgxLab without an internet connection, and your images remain secure on your device.
+
+We leverage the power of React's `useState` and `useLocalStorage` hooks to provide a seamless and persistent user experience.
+
+## Privacy & Security
+
+All image processing occurs locally in your browser, utilizing local storage to save your settings and progress. This means:
+
+- No Data Sharing: Your images are never uploaded or shared with external servers.
+- Offline Capability: imgxLab works 100% offline. You can use all tools without an internet connection.
+- Secure Storage: Settings and preferences are stored securely in your browser's local storage.
+
+## Ease Of Use
+
+Not a flashy, sparkly, kira kira project. imgxLab is designed with photographers in mind. The interface is simple, intuitive, and easy to navigate, ensuring that you can access the tools you need without any hassle.
+
+## Work in Progress
+
+The goal is to create a long-term project that solves simple, common issues photographers face.
+
+imgxLab is designed to address the evolving needs of photographers. We welcome feedback, suggestions, and contributions from the community to shape its future.
 
 More tools will be added over time.
 
-## Current Tools:
+## Documentation
 
-- Metadata Analyzer Tool: Quickly uncover detailed metadata from your unedited images, including camera settings, lens information, copyright data, and more.
-- Frame Insets Designer Tool: Enhance your photos with customizable frame insets. Adjust width, aspect ratios, and background colors to match your style.
+Detailed blog posts will be added over time for each tool, covering how they were created, the code, and the reasoning behind them. You can read them [here](https://www.jorge-perez.dev/blog/).
 
 ## Getting Started
 
@@ -23,17 +63,9 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
