@@ -18,7 +18,7 @@ export default function Home() {
     { name: "Metadata Analyzer", description: "Quickly uncover detailed metadata from your unedited images, including camera settings, lens information, copyright data, and more.", icon: <TextSearchIcon className="h-8 w-8" />, link: "/metadata-viewer" },
     { name: "Frame Insets Designer", description: "Enhance your photos with customizable frame insets. Adjust width, aspect ratios, and background colors to match your style.", icon: <ScanIcon className="h-8 w-8" />, link: "/frame-inset" },
     { name: "Image Compressor", description: "Reduce image file sizes without compromising image quality. Supports JPEG, PNG, WebP, and more!", icon: <PackageIcon className="h-8 w-8" />, link: "/img-compressor" },
-    { name: "WebP to PNG Converter", description: "Effortlessly convert images between WebP and PNG formats, both ways, with ease.", icon: <RefreshCwIcon className="h-6 w-6" />, link: "/webp-to-png" },
+    { name: "WebP to PNG Converter", description: "Effortlessly convert images between WebP and PNG formats, both ways, with ease.", icon: <RefreshCwIcon className="h-8 w-8" />, link: "/webp-to-png" },
     { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-8 w-8" />, link: "#" },
     // { name: "Shutter Count Checker", description: "Discover your camera's shutter count instantly and keep track of its usage. Use an unedited JPEG photo.", icon: <ApertureIcon className="h-6 w-6" />, link: "/shutter-count" },
   ];
@@ -44,7 +44,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8">
           {apps.map((app, index) => (
-            <Link key={index} href={app.link} className="transform transition-all duration-300 hover:bg-zinc-800/70 rounded-xl bg-zinc-900 shadow-[0px_0px_0px_1px_rgba(255,255,255,0.15)] hover:shadow-[0px_0px_0px_1px_rgba(255,255,255,0.20)] before:pointer-events-none before:absolute before:-inset-px before:rounded-xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset]">
+            <Link key={index} href={app.link} className="transform transition-all duration-300 hover:bg-zinc-800/70 rounded-xl bg-zinc-900 shadow-[0px_0px_0px_1px_rgba(255,255,255,0.15)] hover:shadow-[0px_0px_0px_1px_rgba(255,255,255,0.20)] before:pointer-events-none before:absolute before:-inset-px before:rounded-xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] backdrop-blur">
               <div className="h-full p-6 rounded-xl shadow">
                 <div className="flex flex-row items-center gap-3 pb-2">
                   <div className="bg-orange-500 text-white p-2 rounded-full ring-2 ring-white/40 backdrop-blur shadow">

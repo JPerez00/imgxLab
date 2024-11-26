@@ -25,7 +25,7 @@ export default function Header() {
           </svg>
             Repo
         </Button>
-        <Button href="https://www.jorge-perez.dev/blog">
+        <Button href="https://www.jorge-perez.dev/blog/imgxlab-open-source">
             Docs
         </Button>
         </div>
