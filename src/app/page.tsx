@@ -51,7 +51,7 @@ export default function Home() {
                     {app.icon}
                   </div>
                 </div>
-                <div className="mt-2 text-2xl font-semibold tracking-tight text-white">{app.name}</div>
+                <div className="mt-2 text-2xl font-bold tracking-tight text-white">{app.name}</div>
                 <div>
                   <div className="mt-2 text-zinc-300">{app.description}</div>
                 </div>

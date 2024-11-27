@@ -220,7 +220,6 @@ export default function FrameTool() {
         >
           <UploadBox
             title="Upload an image to add an inset frame, adjust the frame width and aspect ratio, and customize the background color."
-            description="Upload Image"
             accept="image/*"
             onChange={(event) => {
               const file = event.target.files?.[0];

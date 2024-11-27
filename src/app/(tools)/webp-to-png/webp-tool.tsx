@@ -142,7 +142,6 @@ export function WEBPToolCore(props: { fileUploaderProps: FileUploaderResult }) {
         >
           <UploadBox
             title="Easily switch between WebP and PNG formats. Upload your images below, and get instant, high-quality conversions in seconds."
-            description="Select Your Image"
             accept=".png,.webp,image/png,image/webp"
             onChange={handleFileUploadEvent} // Pass handleFileUploadEvent to onChange
           />

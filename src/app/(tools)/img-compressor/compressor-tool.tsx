@@ -140,7 +140,6 @@ export default function CompressorTool() {
         >
           <UploadBox
             title="Upload your JPEG, PNG, or WebP images to reduce file size without losing quality or altering their dimensions."
-            description="Upload Image"
             accept="image/jpeg, image/png, image/webp"
             onChange={(event) => {
               const file = event.target.files?.[0];

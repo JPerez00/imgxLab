@@ -139,7 +139,6 @@ export default function MetadataTool() {
         >
           <UploadBox
             title="Upload your unedited JPEG photos below to instantly view all their EXIF metadata and details."
-            description="Upload Image"
             accept="image/*"
             onChange={(event) => {
               const file = event.target.files?.[0];

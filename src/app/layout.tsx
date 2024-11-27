@@ -37,7 +37,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 px-2`}
       >
         {/* Grid background applied here */}
-        <div className="bg-zinc-950 bg-grid-white/[0.10] relative items-center justify-center">
+        <div className="bg-zinc-950 bg-grid-white/[0.05] relative items-center justify-center">
           {/* Radial gradient overlay */}
           <div className="absolute pointer-events-none inset-0 bg-zinc-950 [mask-image:radial-gradient(ellipse_at_center,transparent_40%,black)]"></div>
           
