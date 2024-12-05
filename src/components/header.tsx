@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { CameraIcon } from 'lucide-react';
+import { ApertureIcon } from 'lucide-react';
 import { Button } from './button';
 
 export default function Header() {
@@ -9,7 +9,7 @@ export default function Header() {
     <header className="border-b border-zinc-400/20 bg-black shadow">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center display">
-          <CameraIcon className="h-6 w-6 text-white" />
+          <ApertureIcon className="h-9 w-9 text-white bg-gradient-to-br from-zinc-200 from-10% to-orange-500 to-60% p-1 rounded-full ring-1 ring-white/20" />
           <span className="ml-2 text-xl font-bold tracking-tight bg-gradient-to-br from-white from-10% to-orange-500 bg-clip-text text-transparent">imgxLab</span>
         </Link>
         <div className="flex items-center space-x-4">

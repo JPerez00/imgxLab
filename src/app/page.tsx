@@ -47,7 +47,7 @@ export default function Home() {
             <Link key={index} href={app.link} className="transform transition-all duration-300 hover:bg-zinc-800/70 rounded-xl bg-zinc-900 shadow-[0px_0px_0px_1px_rgba(255,255,255,0.15)] hover:shadow-[0px_0px_0px_1px_rgba(255,255,255,0.20)] before:pointer-events-none before:absolute before:-inset-px before:rounded-xl before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] backdrop-blur">
               <div className="h-full p-6 rounded-xl shadow">
                 <div className="flex flex-row items-center gap-3 pb-2">
-                  <div className="bg-orange-500 text-white p-2 rounded-full ring-2 ring-white/40 backdrop-blur shadow">
+                  <div className="bg-gradient-to-br from-zinc-200 from-10% to-orange-500 to-60% text-white p-2 rounded-full ring-2 ring-white/10 backdrop-blur shadow-md">
                     {app.icon}
                   </div>
                 </div>
