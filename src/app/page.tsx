@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Divider } from "@/components/divider";
-import { TextSearchIcon, ScaleIcon, ScanIcon, PackageIcon, RefreshCwIcon, ClockIcon } from "lucide-react"
+import { TextSearchIcon, ScaleIcon, ScanIcon, PackageIcon, RefreshCwIcon, ClockIcon, CropIcon } from "lucide-react"
 
 function Pin(props: JSX.IntrinsicAttributes & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   return (
@@ -19,6 +19,7 @@ export default function Home() {
     { name: "Frame Insets Designer", description: "Enhance your photos with customizable frame insets. Adjust width, aspect ratios, and background colors to match your style.", icon: <ScanIcon className="h-8 w-8" />, link: "/frame-inset" },
     { name: "Image Compressor", description: "Reduce image file sizes without compromising image quality. Supports JPEG, PNG, WebP, and more!", icon: <PackageIcon className="h-8 w-8" />, link: "/img-compressor" },
     { name: "WebP to PNG Converter", description: "Effortlessly convert images between WebP and PNG formats, both ways, with ease.", icon: <RefreshCwIcon className="h-8 w-8" />, link: "/webp-to-png" },
+    { name: "Image Resizer", description: "Resize your photos by dimensions or percentage for the web quickly and easily.", icon: <CropIcon className="h-8 w-8" />, link: "/img-resizer" },
     { name: "Work in Progress", description: "New tools are on the way! Stay tuned for upcoming features to enhance your photography workflow.", icon: <ClockIcon className="h-8 w-8" />, link: "#" },
     // { name: "Shutter Count Checker", description: "Discover your camera's shutter count instantly and keep track of its usage. Use an unedited JPEG photo.", icon: <ApertureIcon className="h-6 w-6" />, link: "/shutter-count" },
   ];
