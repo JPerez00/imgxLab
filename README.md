@@ -19,13 +19,15 @@ Simple, intuitive, and packed with essential tools like metadata analysis, shutt
 
 ## Current Tools
 
-- Metadata Analyzer Tool: Quickly uncover detailed metadata from your unedited images, including camera settings, lens information, copyright data, and more.
+- **Metadata Analyzer Tool:** Quickly uncover detailed metadata from your unedited images, including camera settings, lens information, copyright data, and more.
 
-- Frame Insets Designer Tool: Enhance your photos with customizable frame insets. Adjust width, aspect ratios, and background colors to match your style.
+- **Frame Insets Designer Tool:** Enhance your photos with customizable frame insets. Adjust width, aspect ratios, and background colors to match your style.
 
-- Image Compressor: Efficiently compress images without compromising quality, saving storage space while maintaining visual fidelity.
+- **Image Compressor:** Efficiently compress images without compromising quality, saving storage space while maintaining visual fidelity.
 
-- WebP to PNG Converter: Easily convert images between WebP and PNG formats, allowing for broader compatibility and usage.
+- **WebP to PNG Converter:** Easily convert images between WebP and PNG formats, allowing for broader compatibility and usage.
+
+- **Image Resizer:** Resize your photos by dimensions or percentage for the web quickly and easily.
 
 ## The Magic Behind imgxLab
 
@@ -86,4 +88,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Open Source Project
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE file](https://github.com/JPerez00/imgxLab/blob/main/LICENSE) for details.
