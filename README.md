@@ -29,6 +29,8 @@ Simple, intuitive, and packed with essential tools like metadata analysis, shutt
 
 - **Image Resizer:** Resize your photos by dimensions or percentage for the web quickly and easily.
 
+- **Favicon Generator:** Convert your PNG images into high-quality ICO favicons. It generates a smaller, single-subimage 128×128 favicon (.ico)
+
 ## The Magic Behind imgxLab
 
 All processing is done locally using your browser's local storage, ensuring that your files are never shared or uploaded to any external servers. This means you can use imgxLab without an internet connection, and your images remain secure on your device.
