@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { TextSearchIcon, ScaleIcon, ScanIcon, PackageIcon, RefreshCwIcon, ClockIcon, CropIcon, ImageIcon } from "lucide-react"
+import { TextSearchIcon, ScaleIcon, ScanIcon, PackageIcon, RefreshCwIcon, CropIcon, ImageIcon } from "lucide-react"
 
 function Pin(props: JSX.IntrinsicAttributes & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   return (
