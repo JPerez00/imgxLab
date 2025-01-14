@@ -17,7 +17,7 @@
     "framer-motion": "^11.11.17",
     "lucide-react": "^0.460.0",
     "mini-svg-data-uri": "^1.4.4",
-    "next": "14.2.16",
+    "next": "^14.2.23",
     "nextjs-toploader": "^3.7.15",
     "png-to-ico": "^2.1.8",
     "react": "^18",
