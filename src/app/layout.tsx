@@ -21,6 +21,33 @@ export const metadata: Metadata = {
   title: "imgxLab - An open-source lab for photographers, built by photographers.",
   description:
     "An open-source lab offering straightforward tools like metadata analysis, shutter count checks, and format conversion.",
+  openGraph: {
+    title: "imgxLab - An open-source lab for photographers, built by photographers.",
+    description:
+      "An open-source lab offering straightforward tools like metadata analysis, shutter count checks, and format conversion.",
+    url: "https://www.imgxlab.com/", 
+    siteName: "imgxLab",
+    images: [
+      {
+        url: "/images/opengraph-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "imgxLab - An open-source lab for photographers, built by photographers.",
+    description:
+      "An open-source lab offering straightforward tools like metadata analysis, shutter count checks, and format conversion.",
+    images: [
+      {
+        url: "/images/opengraph-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
