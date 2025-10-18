@@ -8,6 +8,7 @@ export async function POST(req: NextRequest) {
   try {
     const arrayBuffer = await req.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
+
     const resizedPngBuffer = await sharp(buffer)
       .resize(128, 128, { fit: 'cover' })
       .png({
@@ -20,7 +21,13 @@ export async function POST(req: NextRequest) {
 
     const icoBuffer = await pngToIco([resizedPngBuffer]);
 
-    return new NextResponse(icoBuffer, {
+    // ✅ Convert Node.js Buffer → ArrayBuffer
+    const icoArrayBuffer = icoBuffer.buffer.slice(
+      icoBuffer.byteOffset,
+      icoBuffer.byteOffset + icoBuffer.byteLength
+    ) as ArrayBuffer; // ✅ explicitly cast to ArrayBuffer
+
+    return new NextResponse(icoArrayBuffer, {
       status: 200,
       headers: {
         'Content-Type': 'image/x-icon',
